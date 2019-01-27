@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import css from './Text.css'; // eslint-disable-line
 
 const Text = ({ value, onClick, styles }) => {
     return (
