@@ -3,7 +3,6 @@ import './SynonymsSelector.css';
 
 class SynonymsSelector extends Component {
     renderPopUp = synonyms => {
-        console.log('this.props.replaceWord: ', this.props.replaceWord);
         return (
             <div className="popup">
                 <span> Synonyms (click if you want to replace the selected word): </span>
@@ -23,7 +22,7 @@ class SynonymsSelector extends Component {
 
     render() {
         const { synonyms, loading } = this.props;
-        if (!synonyms) return null
+        if (!synonyms || !synonyms.length ) return null
         else if (loading) return <span> Loading ... </span>
         return (
             this.renderPopUp(synonyms)

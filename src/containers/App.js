@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     render() {
-        const { words, styles, selectWord, selectedWord, selectedIndex, applyStyle, synonyms, loadingSynonyms } = this.props;
+        const { words, styles, selectWord, selectedWord, selectedIndex, applyStyle, synonyms, loadingSynonyms, replaceWord } = this.props;
         return (
             <div className="App">
                 <header>

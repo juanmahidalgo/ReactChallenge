@@ -45,14 +45,14 @@ const replaceWord = synonym =>
     (dispatch, getState) => {
         console.log('synonym: ', synonym);
         const state = getState();
-        const first = state.words.value.substr(0, state.words.selectedIndex);
-        const end = state.words.value.substr(state.words.selectedIndex + state.words.selectedWord.length);
+        const asArray = state.words.value.split(' ');
+        asArray[state.words.selectedIndex] = synonym;
 
         dispatch({
             type: 'REPLACE_SYNONYM',
-            selectedIndex: first.length,
-            selectedWord: synonym,
-            value: first + synonym + end
+            selectedIndex: -1,
+            // selectedWord: synonym,
+            value: asArray.join(' ')
         });
     };
 
