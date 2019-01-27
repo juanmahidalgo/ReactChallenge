@@ -7,7 +7,7 @@ class FileZone extends Component {
         const { text, styles, selectWord } = this.props;
         return text.split(' ').map((value, index) => {
             const onClick = () => selectWord(index, value);
-            return <Text key={ index } styles={ styles[value] } onClick={ onClick } value={`${value}`} />
+            return <Text key={ index } styles={ styles[index] } onClick={ onClick } value={`${value}`} />
         })
     }
 

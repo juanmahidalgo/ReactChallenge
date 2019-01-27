@@ -6,7 +6,7 @@ const words = (state = { styles: {} }, action) => {
                 ...state,
                 styles: {
                     ...state.styles,
-                    [action.selectedWord]: action.styles
+                    [action.selectedIndex]: action.styles
                 }
             }
         case 'SELECT_WORD':

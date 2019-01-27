@@ -45,12 +45,16 @@ const replaceWord = synonym =>
     (dispatch, getState) => {
         console.log('synonym: ', synonym);
         const state = getState();
+        // const styles = { 
+        //     ...state.words.styles 
+        // };
         const asArray = state.words.value.split(' ');
         asArray[state.words.selectedIndex] = synonym;
 
         dispatch({
             type: 'REPLACE_SYNONYM',
             selectedIndex: -1,
+            // styles,
             // selectedWord: synonym,
             value: asArray.join(' ')
         });
@@ -67,12 +71,12 @@ const selectWord = (index, word) =>
 
 const applyStyle = style =>
     (dispatch, getState) => {
-        const selectedWord = getState().words.selectedWord;
+        const selectedIndex = getState().words.selectedIndex;
         const state = getState();
         dispatch({
             type: 'APPLY_STYLE',
-            styles: state.words.styles[selectedWord] ? [...state.words.styles[selectedWord], style] : [style],
-            selectedWord,
+            selectedIndex,
+            styles: state.words.styles[selectedIndex] ? [...state.words.styles[selectedIndex], style] : [style],
         });
     };
 

@@ -18,7 +18,7 @@ const words = (state = { dictionary: {} }, action) => {
         case 'ERROR_FETCHING_SYNONYMS':
             return {
                 ...state,
-                loading: false,
+                loading: false, 
                 error: action.error
             }
         default:
