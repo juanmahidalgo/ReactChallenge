@@ -15,7 +15,7 @@ class App extends Component {
     }
 
     render() {
-        const { words, styles, selectWord, selectedWord, selectedIndex, applyStyle, synonyms, loadingSynonyms, replaceWord } = this.props;
+        const { words, styles, selectWord, selectedWord, selectedIndex, applyStyle, appliedStyles, synonyms, loadingSynonyms, replaceWord } = this.props;
         return (
             <div className="App">
                 <header>
@@ -30,6 +30,7 @@ class App extends Component {
                             selectedIndex={ selectedIndex }
                             selectedWord={ selectedWord }
                             applyStyle={ applyStyle }
+                            appliedStyles={ appliedStyles }
                             synonyms={ synonyms }
                             loadingSynonyms={ loadingSynonyms }
                             replaceWord={ replaceWord }
@@ -46,6 +47,7 @@ const mapStateToProps = state => ({
     selectedWord: state.words.selectedWord,
     styles: state.words.styles,
     synonyms: state.synonyms.dictionary,
+    appliedStyles: state.words.selectedIndex ? state.words.styles[state.words.selectedIndex] : undefined,
     loadingSynonyms: state.synonyms.loading
 })
 

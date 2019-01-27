@@ -5,11 +5,12 @@ import SynonymsSelector from "../SynonymsSelector/SynonymsSelector";
 
 class Editor extends Component {
     render() {
-        const { text, styles, selectWord, selectedWord, applyStyle, synonyms, loadingSynonyms, replaceWord } = this.props;
+        const { text, styles, selectWord, selectedWord, applyStyle, appliedStyles, synonyms, loadingSynonyms, replaceWord } = this.props;
         return (
             <React.Fragment>
                 <ControlPanel
                     applyStyle={ applyStyle }
+                    appliedStyles= { appliedStyles }
                 />
                 <FileZone
                     text={ text }

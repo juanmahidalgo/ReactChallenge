@@ -73,10 +73,18 @@ const applyStyle = style =>
     (dispatch, getState) => {
         const selectedIndex = getState().words.selectedIndex;
         const state = getState();
+        let styles = state.words.styles[selectedIndex] || [];
+        if (styles && styles.includes(style) ) {
+            styles = styles.filter(elem => elem !== style)
+        }
+        else if (styles) {
+            styles.push(style)
+        }
+
         dispatch({
             type: 'APPLY_STYLE',
             selectedIndex,
-            styles: state.words.styles[selectedIndex] ? [...state.words.styles[selectedIndex], style] : [style],
+            styles
         });
     };
 
