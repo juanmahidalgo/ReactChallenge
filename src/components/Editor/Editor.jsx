@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import css from './Editor.css';
 import ControlPanel from "../control-panel/ControlPanel";
 import FileZone from "../file-zone/FileZone";
 import SynonymsSelector from "../SynonymsSelector/SynonymsSelector";

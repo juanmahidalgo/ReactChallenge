@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import css from './Text.css';
 
 const Text = ({ value, onClick, styles }) => {
     return (
