@@ -12,3 +12,4 @@ Run `npm start` for a dev server.
 + Given files structure is not obligatory and could be changed
 
 
+# ReactChallenge
